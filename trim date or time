@@ -1,0 +1,31 @@
+Lets assume that the data is in text format (because of the ET)
+
+In B1:
+=LEFT(TRIM(A1),LEN(TRIM(A1))-5)
+to display:
+3/31/2010  4:18:00 PM
+this removes any extra spaces and the (ET)
+
+In C1:
+=TIMEVALUE(MID(B1,FIND(" ",B1)+1,256))
+and format as time 13:30:55
+to display:
+16:18:00
+The formula discards the date and converts to a true time.
+
+-- 
+Gary''s Student - gsnu201001
+
+
+"Matrix" wrote:
+
+> Hi all. I have a problem. I have a data set that must be copied and pasted 
+> into Excel and one of the columns contains a date and time in this format:
+> 
+> 3/31/2010  4:18:00 PM (ET)
+> 
+> Now I can do a simple search and replace to get rid of the (ET) part, but 
+> what I want to do is this. If the data is in cell ‘A1’, I want to have cell 
+> C1 show JUST the time in a 24hr format. Is there a way to strip the date data 
+> out and convert the time to 24hr format? Thanx!
+> 
