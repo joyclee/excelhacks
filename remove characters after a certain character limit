@@ -1,0 +1,4 @@
+Default Re: How to remove all characters after 17th in cell
+If your text is in cell A1, put this in B1...
+
+=LEFT(A1,17)
